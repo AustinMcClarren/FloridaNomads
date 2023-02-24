@@ -1,5 +1,11 @@
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  background: url("../assets/headerbus7.jpg");
+  /* background-size:100vmin, 100vw;  */
+  /* background-size:130cqmin; */
+  background-size:cover;
+  background-repeat: no-repeat;
+ 
 }
 
 .no-button {
@@ -22,3 +28,13 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+footer {
+ /* background transparent footer, min height and width to make it show wo content */
+  background: url("../assets/footerbus1.png"); 
+    background-size:cover;
+    background-repeat: no-repeat;
+    min-height: 250px; 
+    min-width: 500px;
+}
+
