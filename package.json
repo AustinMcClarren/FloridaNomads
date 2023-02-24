@@ -1,7 +1,7 @@
 {
   "name": "crowd-funding",
   "version": "1.0.0",
-  "description": "",
+  "description": "As a traveler, i want to visit florida to experience its unique range of locations,   To keep track of those attractions and experiences, so i can create unforgettable memories,  I want to explore word of mouth destinations and off the beaten path adventures,",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,18 +12,28 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^5.3.5",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.1"
   },
   "devDependencies": {
     "eslint": "^7.12.1",
     "eslint-config-prettier": "^6.15.0",
     "prettier": "^2.1.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinMcClarren/FloridaNomads.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AustinMcClarren/FloridaNomads/issues"
+  },
+  "homepage": "https://github.com/AustinMcClarren/FloridaNomads#readme"
 }
