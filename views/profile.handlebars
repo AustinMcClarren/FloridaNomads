@@ -2,29 +2,36 @@
 
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome Nomad {{name}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Project:</h3>
-
+    <h3>Add a New City:</h3>
+{{!-- Projects will serve as destinations for now, so I dont break anything will coding this --}}
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">project name:</label>
+        <label for="project-name">Destination Name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
-      <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
+      {{!-- div for rating, maybe insert start click system, instead of text box--}}
+      <div class="form-group">  
+        <label for="project-funding">Nomad Rating ⭐⭐⭐⭐:</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description:</label>
+        <label for="project-desc">Nomad Description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
+      {{!-- code for upload image button that plays a gif simulating uploading an image --}}
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button class="btn btn-primary", onclick="playGif()">Upload Image</button>
+            <div id="gif-container" style="display: none;">
+              <img src="/assets/upload.gif" alt="Animated GIF uploading progress"> 
+            </div>
+
+        <button type="submit" class="btn btn-primary">Save Experience</button> 
       </div>
     </form>
   </div>

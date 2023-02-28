@@ -37,6 +37,18 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+// new code
+function playGif() {
+  var gifContainer = document.getElementById("gif-container");
+  gifContainer.style.display = "flex"; // Show the GIF container
+  setTimeout(function() {
+    gifContainer.style.display = "none"; // Hide the GIF container after 3 seconds
+  }, 3000);
+
+//!!!!! INSERT CODE HERE FOR WHAT HAPPENS AFTER UPLOAD !!
+
+}
+
 
 document
   .querySelector('.new-project-form')
