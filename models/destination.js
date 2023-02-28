@@ -1,48 +1,51 @@
-// include id for traveller
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Traveller extends Model {}
+class destinations extends Model {}
 
-Traveller.init(
+destinations.init(
     {
-         id:{
-            type: DataTypes.INTEGER,
+        id:{
+            type:DataTypes.INTEGER,
             allowNull:false,
-            primaryKey: true,
+            primaryKey:true,
             autoIncrement:true,
         },
         name:{
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
-        gender:{
-            type: DataTypes.STRING,
-            allowNull:false,
-        },
-        age:{
-            type: DataTypes.INTEGER,
-            allowNull:false,
-        },
-        email:{
             type:DataTypes.STRING,
             allowNull:false,
         },
-        points:{
+        country:{
+            type: DataTypes.STRING,
+            allowNull:false,
+        },
+        city:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        description:{
+            type:DataTypes.STRING,
+            allowNull: false,
+        },
+        rating:{
             type:DataTypes.INTEGER,
             allowNull:false,
-            defaultValue: DataTypes.NOW,
-            // DOES THIS RELATE TO HAVING A DEFAULT VALUE OF 0  
+
         },
-    },
+        image_url:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+   
+            
+        },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'traveller',
+        modelName: 'destinations',
       }
-        
     
 );
-module.exports = Traveller;
+module.exports = destinations;
