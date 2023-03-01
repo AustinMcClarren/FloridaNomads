@@ -5,7 +5,7 @@
     "city": "Orlando",
     "description": "A beautiful city with lots of things to see!",
     "rating": 100,
-    "image_url": "image here?"
+    "imageUrl": "image here?"
   }
 
 ]

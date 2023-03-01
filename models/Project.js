@@ -23,6 +23,10 @@ Project.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    imageUrl: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     needed_funding: {
       type: DataTypes.FLOAT,
       allowNull: false,

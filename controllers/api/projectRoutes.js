@@ -1,24 +1,34 @@
 const router = require('express').Router();
-const { Project } = require('../../models');
+const { Project, image } = require('../../models');
 const withAuth = require('../../utils/auth');
-const multer = require('multer'); 
-const path = require('path');
+// const multer = require('multer'); 
+// const path = require('path');
+// const fs = require('fs');
+// const __basedir = path.dirname(require.main.filename);
 
-const storage = multer.diskStorage({destination: function(req, file, cb){
-  cb(null, './public/images')
-},filename:function(req, file, cb){
-  cb(null, file.fieldname+'-' + Date.now()+path.extname(file.originalname))
-}})
-const upload = multer({storage:storage})
+// const storage = multer.diskStorage({destination: function(req, file, cb){
+//   cb(null, './public/images')
+// },filename:function(req, file, cb){
+//   cb(null, file.fieldname + '-' + Date.now()+path.extname(file.originalname))
+// }})
+// const upload = multer({storage:storage})
 
-
-
-
-router.post('/upload', upload.single('IMAGE'), (req, res)=> {
-  console.log(req.file);
-  res.render('profile');
-}) 
-
+router.post('/upload/:projectID', async (req, res) => {
+  try {
+    const {imageUrl} = req.body
+  const {projectID} = req.params
+  const newProject = await Project.update({
+    imageUrl
+  },
+  {
+    where: {id: projectID}
+  })
+  res.status(200).json(newProject)
+  } catch (err) {
+    console.log(err)
+    res.status(400).json(err)
+  }
+})
 
 
 
