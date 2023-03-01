@@ -1,6 +1,26 @@
 const router = require('express').Router();
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auth');
+const multer = require('multer'); 
+const path = require('path');
+
+const storage = multer.diskStorage({destination: function(req, file, cb){
+  cb(null, './public/images')
+},filename:function(req, file, cb){
+  cb(null, file.fieldname+'-' + Date.now()+path.extname(file.originalname))
+}})
+const upload = multer({storage:storage})
+
+
+
+
+router.post('/upload', upload.single('IMAGE'), (req, res)=> {
+  console.log(req.file);
+  res.render('profile');
+}) 
+
+
+
 
 router.post('/', withAuth, async (req, res) => {
   try {
