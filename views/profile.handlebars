@@ -10,7 +10,7 @@
   <div class="col-md-6">
     <h3>Add a New City:</h3>
 {{!-- Projects will serve as destinations for now, so I dont break anything will coding this --}}
-    <form class="form new-project-form">
+    <form action="/api/projects/upload" method="POST" enctype="multipart/form-data" class="form new-project-form">
       <div class="form-group">
         <label for="project-name">Destination Name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
@@ -24,9 +24,10 @@
         <label for="project-desc">Nomad Description:</label>
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
-      {{!-- code for upload image button that plays a gif simulating uploading an image --}}
+      {{!-- code for upload image button that plays a gif simulating uploading an image, doesnt wrk w multer, see if i can fix or just remove play gif here? --}}
       <div class="form-group">
         <button class="btn btn-primary", onclick="playGif()">Upload Image</button>
+         <input type="file" name ="IMAGE" />  
             <div id="gif-container" style="display: none;">
               <img src="/assets/upload.gif" alt="Animated GIF uploading progress"> 
             </div>
