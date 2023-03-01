@@ -11,18 +11,21 @@ header, .project:not(:last-child) {
 /* moves the home button off of the bus to the right */
 #moveThisRight {
   float: left;
-  margin-left: 140%;
+  margin-left: 225%;
+  margin-top: 20%;
   
 }
 /* nav bar css */
 nav {
   font-size: 2rem !important;
   font-weight: bolder;
+  margin-right: 100px !important;
 
 }
 /* color gradient for area between header and footer */
 body {
-  background: url("../assets/71yu3sjjtl_sl1488_.jpg");
+  background: url("../assets/Florida\ Map.png");
+  background-color: #0e636d;
   background-position: center;
   background-size: unset;
   background-repeat: no-repeat;
@@ -57,7 +60,7 @@ footer {
     background-size:cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    min-height: 250px; 
+    min-height: 400px; 
     min-width: 500px;
     position:fixed;
     bottom:0;
