@@ -15,18 +15,10 @@ image.init(
             type:DataTypes.STRING,
             allowNull:false,
         },
-        filesize:{
+        userId:{
             type:DataTypes.INTEGER,
             allowNull:false,
-        },
-        mimetype:{
-            type:DataTypes.STRING,
-            allowNull:false,
-        },
-        data:{
-            type:DataTypes.INTEGER,
-            allowNull:false,
-        },
+        }
 
     },
     {

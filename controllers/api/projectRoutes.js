@@ -13,7 +13,7 @@ const upload = multer({storage:storage})
 
 
 
-
+//start of multer
 router.post('/upload', upload.single('IMAGE'), (req, res)=> {
   console.log(req.file);
   res.render('profile');
