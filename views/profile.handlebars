@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-auto">
     <h2>Welcome Nomad {{name}}!</h2>
-  </div>
+    </div>
 </div>
 
 <div class="row mt-4">
@@ -15,7 +15,7 @@
         <label for="project-name">Destination Name:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
-      {{!-- div for rating, maybe insert start click system, instead of text box--}}
+      {{!-- div for rating, maybe insert star click system, instead of text box--}}
       <div class="form-group">  
         <label for="project-funding">Nomad Rating ⭐⭐⭐⭐:</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
@@ -25,14 +25,15 @@
         <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
       </div>
       {{!-- code for upload image button that plays a gif simulating uploading an image, doesnt wrk w multer, see if i can fix or just remove play gif here? --}}
+      {{!-- class pointsColor is just plain green points, class colorCycle is looping colors, can use either --}}
       <div class="form-group">
-        <button class="btn btn-primary", onclick="playGif()">Upload Image</button>
+        <button type="submit" class="btn btn-primary">Save Experience <span class ="pointsColor"> (20 Points) </span> </button> 
+        <button class="btn btn-primary", onclick="playGif()">Upload Image <span class ="colorCycle">(50 Points) </span> </button>
          <input type="file" name ="IMAGE" />  
             <div id="gif-container" style="display: none;">
               <img src="/assets/upload.gif" alt="Animated GIF uploading progress"> 
             </div>
-
-        <button type="submit" class="btn btn-primary">Save Experience</button> 
+        
       </div>
     </form>
   </div>

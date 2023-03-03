@@ -60,7 +60,7 @@ footer {
     background-size:cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    min-height: 400px; 
+    min-height: 200px; 
     min-width: 500px;
     position:fixed;
     bottom:0;
@@ -78,3 +78,21 @@ footer {
   margin-left: 8px;
 
   }
+
+  /* backup for just plain green points color */
+  .pointsColor {
+    color: yellowgreen;
+  }
+
+  /* color looping for points */
+.colorCycle {
+    animation: color-cycle 1s infinite;
+}
+@keyframes color-cycle {
+  0% { color: rgb(115, 255, 0); }
+  25% { color: orange; }
+  50% { color: yellow; }
+  75% { color: green; }
+  100% { color: rgb(0, 204, 255); }
+}
+
