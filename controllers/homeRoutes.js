@@ -70,8 +70,6 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 
-
-
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -82,4 +80,26 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+// route to addMemory page, using withAuth middleware
+router.get('/addMemory', withAuth, async (req, res) => { 
+  try {
+    // Find the logged in user data based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] }, //exclude password data for security
+      include: [{ model: Project }], // include 'project' model, !!-NEED TO VERIFY IF THIS IS THE CORRECT MODEL TO INCLUDE
+    });
+
+    const user = userData.get({ plain: true }); // strip data to pass to handlebars
+
+    res.render('addMemory', { // renders addMemory
+      ...user,
+      logged_in: true // pass logged in status to template
+    });
+  } catch (err) {   
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
+
