@@ -15,20 +15,36 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h2>
-        <span role="img" aria-label="money">🌴</span>
+        {{!-- <span role="img" aria-label="money">🌴</span> --}}
         <a href="/" id="moveThisRight">Home</a>
       </h2>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <a href="/addMemory"> add memory</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a id="login-button" href="/profile">Profile</a> |
+        <a href="/recentTravel"> Recent Travels!</a> |
+        <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a id="login-here-now" href="/login">Login</a>
         {{/if}}
       </nav>
     </header>
+     
+     
+     
+     <nav>
+        <!-- Conditionally render sign in or logout links -->
+        {{#if signup}}
+        <a id="signup-button" href="/profile">Profile</a> |
+        <a href="/recentTravel"> Recent Travels!</a> |
+        <button class="no-button" id="signup">Logout</button>
+        {{else}}
+        <a id="sign-up-here" href="/signup">Sign Up</a>
+        {{/if}}
+      </nav>
+    
+    
+    
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}

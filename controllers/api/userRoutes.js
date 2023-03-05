@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+//home route for login
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -16,6 +18,27 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+
+//homeroute for sign up
+router.post("/", async (req, res) => {
+	try {
+		const userData = await User.create(req.body);
+
+		req.session.save(() => {
+			req.session.user_id = userData.id;
+			req.session.signup = true;
+
+			res.status(200).json(userData);
+		});
+	} catch (err) {
+		res.status(400).json(err);
+	}
+});
+
+
+
+//login route?
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -48,6 +71,44 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
+// sign up route?
+router.post("/signup", async (req, res) => {
+	try {
+		const userData = await User.findOne({ where: { email: req.body.email } });
+
+		if (!userData) {
+			res
+				.status(400)
+				.json({ message: "oops, gotta put something here for us!" });
+			return;
+		}
+
+		const validPassword = await userData.checkPassword(req.body.password);
+
+		if (!validPassword) {
+			res
+				.status(400)
+				.json({ message: "this is right?" });
+			return;
+		}
+
+		req.session.save(() => {
+			req.session.user_id = userData.id;
+			req.session.logged_in = true;
+
+			res.json({ user: userData, message: "You are now signed up!" });
+		});
+	} catch (err) {
+		res.status(400).json(err);
+	}
+});
+
+
+
+
+
+//log out route?
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -58,4 +119,6 @@ router.post('/logout', (req, res) => {
   }
 });
 
+
+// exporting
 module.exports = router;

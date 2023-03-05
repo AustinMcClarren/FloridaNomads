@@ -4,6 +4,10 @@ const withAuth = require('../../utils/auth');
 const multer = require('multer'); 
 const path = require('path');
 
+
+
+
+//MULTER ISNT WORKING 
 const storage = multer.diskStorage({destination: function(req, file, cb){
   cb(null, './public/images')
 },filename:function(req, file, cb){
@@ -13,7 +17,7 @@ const upload = multer({storage:storage})
 
 
 
-
+// WHERE YOU CAN UPLOAD A IMAGE
 router.post('/upload', upload.single('IMAGE'), (req, res)=> {
   console.log(req.file);
   res.render('profile');
@@ -22,6 +26,9 @@ router.post('/upload', upload.single('IMAGE'), (req, res)=> {
 
 
 
+
+
+// WHAT IS THIS???
 router.post('/', withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({

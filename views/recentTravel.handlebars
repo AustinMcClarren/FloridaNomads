@@ -1,4 +1,4 @@
-{{!-- Add Memory / Trip --}}
+{{!-- Add travel / Trip --}}
 
 <div class="row">
   <div class="col-auto">
@@ -8,16 +8,16 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Add a New City:</h3>
+    <h3>Where did you travel?:</h3>
 {{!-- Projects will serve as destinations for now, so I dont break anything will coding this --}}
     <form action="/api/projects/upload" method="POST" enctype="multipart/form-data" class="form new-project-form">
       <div class="form-group">
-        <label for="project-name">Destination Name:</label>
+        <label for="project-name"> Nomad Destination:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       {{!-- div for rating, maybe insert star click system, instead of text box--}}
       <div class="form-group">  
-        <label for="project-funding">Nomad Rating ⭐⭐⭐⭐:</label>
+        <label for="project-funding">Nomad Rating: ⭐⭐⭐⭐</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
@@ -27,8 +27,8 @@
       {{!-- code for upload image button that plays a gif simulating uploading an image, doesnt wrk w multer, see if i can fix or just remove play gif here? --}}
       {{!-- class pointsColor is just plain green points, class colorCycle is looping colors, can use either --}}
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Save Experience <span class ="pointsColor"> (20 Points) </span> </button> 
-        <button class="btn btn-primary", onclick="playGif()">Upload Image <span class ="colorCycle">(50 Points) </span> </button>
+        <button type="submit" id="pointsystem" class="btn btn-primary">Save Experience <span class ="pointsColor"> (20 Points) </span> </button> 
+        <button class="btn btn-primary", onclick="playGif()">Upload A Photo <span class ="colorCycle">(50 Points) </span> </button>
          <input type="file" name ="IMAGE" />  
             <div id="gif-container" style="display: none;">
               <img src="/assets/upload.gif" alt="Animated GIF uploading progress"> 
@@ -38,22 +38,5 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
 
-    {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-
-<script src="./js/addMemory.js"></script>
+<script src="./js/recentTravel.js"></script>
