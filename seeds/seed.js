@@ -31,10 +31,10 @@ const seedDatabase = async () => {
     // });
 
     // seed trips table  !!!! UNCOMMENT AFTER DATA IS ENTERED into TRIPSDATA.JSON !!!!
-    // await trips.bulkCreate(tripsData, {
-    //       individualHooks: true,
-    //       returning: true,
-    // }); 
+    await trips.bulkCreate(tripsData, {
+          individualHooks: true,
+          returning: true,
+    }); 
     
     // seed user table
     await User.bulkCreate(userData, {
