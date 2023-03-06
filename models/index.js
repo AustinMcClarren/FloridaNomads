@@ -3,6 +3,7 @@ const Project = require('./Project');
 const Traveller = require('./Traveller');
 const destinations = require('./destination');
 const image = require('./image')
+const trips = require('./trips');
 
 User.hasMany(Project, {
   foreignKey: 'user_id',
@@ -29,4 +30,6 @@ image.hasMany(destinations, {
 
 
 
-module.exports = { User, Project,Traveller,image,destinations };
+
+
+module.exports = { User, Project,Traveller,image,destinations, trips };
