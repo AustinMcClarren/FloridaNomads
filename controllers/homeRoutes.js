@@ -93,7 +93,7 @@ router.get("/signup", (req, res) => {
 
 
 // route to recent travels page, using withAuth middleware
-router.get('/recentTravel', withAuth, async (req, res) => { 
+router.get('/recentTravels', withAuth, async (req, res) => { 
   try {
     // Find the logged in user data based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
