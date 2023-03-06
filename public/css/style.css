@@ -1,7 +1,7 @@
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
   background: url("../assets/headerbus7.jpg");
-  /* background-size:100vmin, 100vw;  */
+  background-size:100vmin, 100vw; 
   /* background-size:130cqmin; */
   background-size:cover;
   background-repeat: no-repeat;
@@ -11,27 +11,227 @@ header, .project:not(:last-child) {
 /* moves the home button off of the bus to the right */
 #moveThisRight {
   float: left;
-  margin-left: 225%;
-  margin-top: 20%;
-  
+  margin-top: 10%;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  right: 50px;
 }
+/* added color to login in button */
 /* nav bar css */
-nav {
+nav, #login-here-now {
   font-size: 2rem !important;
-  font-weight: bolder;
-  margin-right: 100px !important;
-
+  font-weight: bold;
+  margin-right: 200px !important;
+  color: whitesmoke;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
+nav,#sign-up-here {
+  font-size: 2rem !important;
+  font-weight: bold;
+  margin-right: 85px !important;
+  color: whitesmoke;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* added for sign up page! */
+ #first-sign{
+  color: whitesmoke;
+   font-weight: bold;
+}
+#email-sign{
+  color: whitesmoke;
+   font-weight: bold;
+}
+#password-sign{
+  color: whitesmoke;
+   font-weight: bold;
+}
+#name-sign-first{
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/* NEW HOMEPAGE STYLES*/
+
+
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  width: 100px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+}
+
+nav li a:hover {
+  color: #007bff;
+}
+
+
+
+
+/* Hero Styles */
+.hero {
+  height: 500px;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+}
+
+.search-bar h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.search-bar p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.search-bar input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-bar input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+
+
+
+/* Featured Destinations Styles */
+.featured-destinations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.featured-destinations h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.destination {
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.destination img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination h3 {
+  font-size: 1.5rem;
+  margin: 20px;
+}
+
+.destination p {
+  font-size: 1.2rem;
+  margin: 0 20px 20px 20px;
+}
+
+.destination a {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  margin: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+
+
+
 /* color gradient for area between header and footer */
 body {
-  background: url("../assets/Florida\ Map.png");
+  /* background: url("../assets/Florida\ Map.png");  
+  LETS CHANGE THIS */
   background-color: #0e636d;
   background-position: center;
   background-size: unset;
   background-repeat: no-repeat;
-  min-height: 2vh;
+  min-height: 3vh;
   margin-bottom: 15%;
 }
+
+
+
 
 .no-button {
   background: none;
@@ -43,10 +243,16 @@ body {
   font-size: 100%;
 }
 
+
+
+
 .no-button:hover {
   color: #065b83;
   text-decoration: underline;
 }
+
+
+
 
 .dollar-amount {
   color: #056605;
@@ -54,19 +260,34 @@ body {
   margin-left: -5px;
 }
 
+#logout{
+  color: white;
+  font-weight: bold;
+}
+
+
+
 footer {
  /* background transparent footer, min height and width to make it show wo content */
   background: url("../assets/footerbus1.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    min-height: 200px; 
+    min-height: 100px; 
     min-width: 500px;
     position:fixed;
     bottom:0;
     left:0;
     right:0;
     height:30px;
+}
+
+#profile-template{
+  color: whitesmoke;
+  /* font-size: medium; */
+  font-weight: bold;
+
+
 }
 
 /* style for the gif simulating uploading an image */

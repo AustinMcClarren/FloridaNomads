@@ -80,9 +80,20 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+//sign up route
+router.get("/signup", (req, res) => {
+	// If the user is already signup, redirect the request to another route
+	if (req.session.signup) {
+		res.redirect("/profile");
+		return;
+	}
 
-// route to addMemory page, using withAuth middleware
-router.get('/addMemory', withAuth, async (req, res) => { 
+	res.render("signup");
+});
+
+
+// route to recent travels page, using withAuth middleware
+router.get('/recentTravel', withAuth, async (req, res) => { 
   try {
     // Find the logged in user data based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -92,7 +103,7 @@ router.get('/addMemory', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true }); // strip data to pass to handlebars
 
-    res.render('addMemory', { // renders addMemory
+    res.render('recentTravels', { // renders recent travels
       ...user,
       logged_in: true // pass logged in status to template
     });
